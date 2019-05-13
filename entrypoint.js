@@ -15,7 +15,8 @@ async function run() {
   try {
     if (event === "pull_request") {
       tools.log("### Action triggered! ###");
-
+      tools.log(tools.context)
+      
       const jenkinsBaseUrl = process.env.JENKINS_BASE_URL || "";
       const octokit = tools.github;
       const comment = `${jenkinsBaseUrl}${event.number}/`;
