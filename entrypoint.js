@@ -35,3 +35,36 @@ async function run() {
     tools.log.error(`Something went wrong ${error}!`);
   }
 }
+
+/**
+ * Log warnings to the console for missing environment variables
+ */
+function checkForMissingEnv() {
+  const requiredEnvVars = [
+    "HOME",
+    "GITHUB_WORKFLOW",
+    "GITHUB_ACTION",
+    "GITHUB_ACTOR",
+    "GITHUB_REPOSITORY",
+    "GITHUB_EVENT_NAME",
+    "GITHUB_EVENT_PATH",
+    "GITHUB_WORKSPACE",
+    "GITHUB_SHA",
+    "GITHUB_REF",
+    "GITHUB_TOKEN",
+    "JENKINS_BASE_URL"
+  ];
+
+  const requiredButMissing = requiredEnvVars.filter(
+    key => !process.env.hasOwnProperty(key)
+  );
+  if (requiredButMissing.length > 0) {
+    // This isn't being run inside of a GitHub Action environment!
+    const list = requiredButMissing.map(key => `- ${key}`).join("\n");
+    const warning = `There are environment variables missing from this runtime.\n${list}`;
+    tools.log.warn(warning);
+    return false;
+  } else {
+    return true;
+  }
+}
