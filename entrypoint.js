@@ -1,7 +1,6 @@
 // entrypoint.js
 const { Toolkit } = require("actions-toolkit");
 const tools = new Toolkit();
-const webPageTest = require("webpagetest");
 const argv = tools.arguments;
 
 const { event, payload, sha } = tools.context;
