@@ -1,0 +1,25 @@
+{
+  "name": "itscaro/github-actions-comment",
+  "version": "1.0.0",
+  "description": "github action which add a comment",
+  "main": "entrypoint.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itscaro/github-actions-comment.git"
+  },
+  "keywords": [
+    "github",
+    "actions"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itscaro/github-actions-comment/issues"
+  },
+  "homepage": "https://github.com/itscaro/github-actions-comment#readme",
+  "dependencies": {
+    "actions-toolkit": "^1.5.0"
+  }
+}
