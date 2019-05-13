@@ -1,6 +1,8 @@
 // entrypoint.js
 const { Toolkit } = require("actions-toolkit");
-const tools = new Toolkit();
+const tools = new Toolkit({
+  event: ['pull_request.opened', 'pull_request.synchronize'],
+});
 const argv = tools.arguments;
 
 const { event, payload, sha } = tools.context;
