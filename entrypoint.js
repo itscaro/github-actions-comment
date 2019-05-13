@@ -51,7 +51,7 @@ function checkForMissingEnv() {
     "GITHUB_SHA",
     "GITHUB_REF",
     "GITHUB_TOKEN",
-    "JENKINS_BASE_URL"
+    "CI_BASE_URL"
   ];
 
   const requiredButMissing = requiredEnvVars.filter(
