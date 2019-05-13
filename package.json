@@ -1,5 +1,5 @@
 {
-  "name": "itscaro/github-actions-comment",
+  "name": "itscaro-github-actions-comment",
   "version": "1.0.0",
   "description": "github action which add a comment",
   "main": "entrypoint.js",
