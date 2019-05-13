@@ -19,7 +19,7 @@ async function run() {
       
       const jenkinsBaseUrl = process.env.JENKINS_BASE_URL || "";
       const octokit = tools.github;
-      const comment = `${jenkinsBaseUrl}${event.number}/`;
+      const comment = `${jenkinsBaseUrl}${payload.number}/`;
       const { owner, repo } = tools.context.repo({ ref: `${payload.ref}` });
 
       await octokit.repos.createCommitComment({
