@@ -15,11 +15,10 @@ async function run() {
   try {
     if (event === "pull_request") {
       tools.log("### Action triggered! ###");
-      tools.log(tools.context)
-      
-      const jenkinsBaseUrl = process.env.JENKINS_BASE_URL || "";
+
+      const ciBaseUrl = process.env.CI_BASE_URL || "";
       const octokit = tools.github;
-      const comment = `${jenkinsBaseUrl}${payload.number}/`;
+      const comment = `${ciBaseUrl}${payload.number}/`;
       const { owner, repo } = tools.context.repo({ ref: `${payload.ref}` });
 
       await octokit.repos.createCommitComment({
